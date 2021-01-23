@@ -4,6 +4,8 @@ package com.baomidou.mybatisplus.samples.typehandler.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.samples.typehandler.entity.User;
 
+import java.util.List;
+
 /**
  * <p>
  * MP 支持不需要 UserMapper.xml 这个模块演示内置 CRUD 咱们就不要 XML 部分了
@@ -14,4 +16,5 @@ import com.baomidou.mybatisplus.samples.typehandler.entity.User;
  */
 public interface UserMapper extends BaseMapper<User> {
 
+    List<User> selectUserById(Integer id);
 }

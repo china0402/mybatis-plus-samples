@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baomidou.mybatisplus.samples.typehandler.mapper.UserMapper">
+
+    <resultMap id="userResultMap" type="com.baomidou.mybatisplus.samples.typehandler.entity.User">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+        <result column="email" property="email"/>
+        <result column="wallet" property="wallet" typeHandler="com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler"/>
+        <result column="other_info" property="otherInfo" typeHandler="com.baomidou.mybatisplus.extension.handlers.FastjsonTypeHandler"/>
+    </resultMap>
+
+    <select id="selectUserById" resultMap="userResultMap">
+        select u.wallet,u.other_info from user u where u.id = 1
+    </select>
+</mapper>

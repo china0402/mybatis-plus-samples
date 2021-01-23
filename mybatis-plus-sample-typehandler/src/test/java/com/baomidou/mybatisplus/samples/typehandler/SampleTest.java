@@ -10,6 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.baomidou.mybatisplus.samples.typehandler.entity.User;
 import com.baomidou.mybatisplus.samples.typehandler.mapper.UserMapper;
 
+import java.util.List;
+
 /**
  * <p>
  * 内置 类型处理器 演示
@@ -31,10 +33,18 @@ public class SampleTest {
     @Test
     public void test() {
         // 自己去观察打印 SQL 目前随机访问 user_2018  user_2019 表
-        User Jone = userMapper.selectById(1);
-        System.err.println(Jone.getName());
+//        User Jone = userMapper.selectById(1);
+//        System.err.println(Jone.getName());
+//
+//        User Jack = userMapper.selectById(1);
+//        System.err.println(Jack.getName());
 
-        User Jack = userMapper.selectById(1);
-        System.err.println(Jack.getName());
+        List<User> users = userMapper.selectUserById(1);
+
+        for (User user : users) {
+            System.out.println(user);
+        }
+
+
     }
 }

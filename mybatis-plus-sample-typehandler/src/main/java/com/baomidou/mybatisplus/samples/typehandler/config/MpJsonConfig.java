@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @author miemie
  * @since 2019-11-28
  */
-@Component
+//@Component
 public class MpJsonConfig implements CommandLineRunner {
 
     /**
